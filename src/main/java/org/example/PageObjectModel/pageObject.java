@@ -2,43 +2,48 @@ package org.example.PageObjectModel;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.testng.annotations.Test;
 
 public class pageObject {
     WebDriver driver;
     //loctors
-  protected   By id=By.id("signup");
-  protected By firstname=By.id("firstName");
-    protected By lastname=By.id("lastName");
-   protected By email=By.id("email");
-   protected By password=By.id("password");
-   protected By submitBtn=By.id("submit");
+  By signupBox=By.id("signup");
+ By firstnameBox=By.id("firstName");
+    By lastnameBox=By.id("lastName");
+   By emailadres=By.id("email");
+    By passwordBox=By.id("password");
+    By submitBtn=By.id("submit");
     public pageObject(WebDriver driver){
         this.driver=driver;
 
     }
 
     //Actions
-    public void clickSignUpBtn(String str){
-        driver.findElement(By.id("signup")).click();
+    public void clickSignUpBtn(String click){
+        driver.findElement(By.id("signupBox")).click();
 
     }
-    public void insertFirstName(String id){
-        driver.findElement(By.id("firstName")).sendKeys("saida");
+    @Test
+    public void insertFirstName(String name){
+        driver.findElement(By.id("firstnameBox")).sendKeys("saida");
     }
-    public void insertLastName(String id){
-       driver.findElement(By.id("lastName")).sendKeys("saida123");
+    @Test
+    public void insertLastName(String lastName){
+       driver.findElement(By.id("lastnameBox")).sendKeys("saida123");
 
     }
-    public  void email(String id){
-        driver.findElement(By.id("email")).sendKeys("saida123@yahoo.com");
+    @Test
+    public  void email(String email){
+        driver.findElement(By.id("emailadres")).sendKeys("saida123@yahoo.com");
 
     }
-    public void insertPaswor(String id){
-        driver.findElement(By.id("password")).sendKeys("saida123");
+   @Test
+   public void insertPasword(String password){
+        driver.findElement(By.id("passwordBox")).sendKeys("saida123");
 
     }
     public  void clickSubmit(String id){
-        driver.findElement(By.id("submit")).click();
+        driver.findElement(By.id("submitBtn")).click();
 
     }
 

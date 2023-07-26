@@ -1,0 +1,20 @@
+############Global Properties#######
+1#User credentials
+2username-user123
+3password=pass123
+#4Browser
+browser=chrome
+url=https://www.google.com/
+#################Login Page########
+sign-in=//a[@aria-label='Gmail (opens a new tab)']
+account=/html/body/header/div/div/div/a[3]/span[2]
+firstnamebox=//input[@name='firstName']
+nextbox=//*[@id="collectNameNext"]/div/button/span
+monthoption=//select[@id='month']
+monthbox=//*[@id="month"]/option[6]
+
+
+
+########Wait Times#######
+wait.time.implicit=20
+wait.time.explicit=30

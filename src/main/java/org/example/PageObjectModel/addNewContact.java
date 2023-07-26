@@ -2,67 +2,80 @@ package org.example.PageObjectModel;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.testng.annotations.Test;
 
 public class addNewContact {
 
 
         WebDriver driver;
+    By addcontactbox= By.id("add-contact");
+    By firstnamebox=  By.xpath("//input[@placeholder='First Name']");
+    By lastnamebox= By.xpath("//input[@placeholder='Last Name']");
+    By dateofbirth= By.id("birthdate");
+    By emailbox= By.xpath("//input[@placeholder='example@email.com']");
+    By phonenmbr=By.id("phone");
+    By adress=By.xpath("//input[@placeholder='Address 1']");
+    By city=By.cssSelector("#city");
+    By state= By.id("stateProvince");
+    By postalcode= By.xpath("//input[@id='postalCode']");
+    By country= By.xpath("//input[@placeholder='Country']");
 
 
 
     public addNewContact(WebDriver driver){
         this.driver=driver;
-        By.id("add-contact");
-        By.xpath("//input[@placeholder='First Name']");
-        By.xpath("//input[@placeholder='Last Name']");
-        By.id("birthdate");
-        By.xpath("//input[@placeholder='example@email.com']");
-        By.id("phone");
-        By.xpath("//input[@placeholder='Address 1']");
-        By.cssSelector("#city");
-        By.id("stateProvince");
-        By.xpath("//input[@id='postalCode']");
-        By.xpath("//input[@placeholder='Country']");
-        By.id("submit");
+
 
     }
+  @Test
   public void clickAddContactBtn(String id){
-      driver.findElement(By.id("add-contact")).click();
+      driver.findElement(By.id("addcontactbox")).click();
   }
-  public  void insertName(String id){
-      driver.findElement(By.xpath("//input[@placeholder='First Name']")).sendKeys("saida");
+  @Test
+  public  void insertName(String name){
+      driver.findElement(By.xpath("firstnamebox")).sendKeys("saida");
     }
-    public void insertLastName(String id){
-        driver.findElement(By.xpath("//input[@placeholder='Last Name']")).sendKeys("saidA");
+    @Test
+    public void insertLastName(String lastname){
+        driver.findElement(By.xpath("lastnamebox")).sendKeys("saidA");
 
     }
-    public void insertBrthDate(String id){
-        driver.findElement(By.id("birthdate")).sendKeys("01/01/21");
+   @Test
+   public void insertBrthDate(String birthdate){
+        driver.findElement(By.id("dateofbirth")).sendKeys("01/01/21");
     }
-    public  void email(String str){
-        driver.findElement(By.xpath("//input[@placeholder='example@email.com']")).sendKeys("saida123@yahoo.com");
+    @Test
+    public  void email(String email){
+        driver.findElement(By.xpath("emailbox")).sendKeys("saida123@yahoo.com");
     }
-    public void enterPhoneNumber(String str){
-        driver.findElement(By.id("phone")).sendKeys("2121212121");
+    @Test
+    public void enterPhoneNumber(String phoneNumber){
+        driver.findElement(By.id("phonenmbr")).sendKeys("2121212121");
 
     }
-    public void enterAdress(String str){
-        driver.findElement(By.xpath("//input[@placeholder='Address 1']")).sendKeys("trump rd");
+   @Test
+   public void enterAdress(String adress){
+        driver.findElement(By.xpath(" adress")).sendKeys("trump rd");
 
     }
-    public  void enterCity(String str){
-        driver.findElement(By.cssSelector("#city")).sendKeys("brooklyn");
+    @Test
+    public  void enterCity(String city){
+        driver.findElement(By.cssSelector("city")).sendKeys("brooklyn");
     }
-    public  void enterState(String str){
+    @Test
+    public  void enterState(String state){
 
     }
-    public  void enterPostalCode(String str){
-        driver.findElement(By.xpath("//input[@id='postalCode']")).sendKeys("123456");
+    @Test
+    public  void enterPostalCode(String postalCode){
+        driver.findElement(By.xpath("postalcode")).sendKeys("123456");
     }
-    public  void enterCountry(String ster){
-        driver.findElement(By.xpath("//input[@placeholder='Country']")).sendKeys("USS");
+   @Test
+   public  void enterCountry(String country){
+        driver.findElement(By.xpath("country")).sendKeys("USS");
     }
-    public void clickSubmitBtn(){
-        driver.findElement(By.id("submit")).click();
+   @Test
+   public void clickSubmitBtn(){
+        driver.findElement(By.id("submitbox")).click();
     }
 }

@@ -19,7 +19,7 @@ public class poModel extends base {
        // driver.findElement(By.id("lastName")).sendKeys("saida123");
         pageObject.email("saida123@yahoo.com");
         //driver.findElement(By.id("email")).sendKeys("saida123@yahoo.com");
-        pageObject.insertPaswor("saida123");
+        pageObject.insertPasword("saida123");
        // driver.findElement(By.id("password")).sendKeys("saida123");
         pageObject.clickSubmit("submit");
         //driver.findElement(By.id("submit")).click();
